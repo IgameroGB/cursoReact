@@ -12,7 +12,7 @@ const forEachArr = techs.forEach((tech) => {
 const mapArr = techs.map((tech) => {
     return tech;
 })
-//ma crea un nuevo array mientras que forEach solo lo itera
+//map crea un nuevo array mientras que forEach solo lo itera
 
 console.log(forEachArr)
 console.log(mapArr)
