@@ -71,16 +71,16 @@ header p a {
     color: #FFF;
 }
 
-.alerta {
+.alert {
     padding: 1rem;
     text-align: center;
     color: #FFF;
     text-transform: uppercase;
     font-size: 20px;
 }
-.alerta.error {
+.alert.error {
     background-color: rgb(162, 0, 0);
 }
-.alerta.exito {
+.alert.success {
     background-color: rgb(7, 145, 7);;
 }
