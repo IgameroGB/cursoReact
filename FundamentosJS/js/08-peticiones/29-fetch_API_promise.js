@@ -1,4 +1,4 @@
-// Fetch API
+// Fetch API - promise
 
 const url = 'https://jsonplaceholder.typicode.com/comments'
 
