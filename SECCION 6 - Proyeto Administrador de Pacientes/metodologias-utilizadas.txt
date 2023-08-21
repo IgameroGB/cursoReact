@@ -1,1 +1,0 @@
-En este proyecto utilizaremos Vite, Tailwind CSS y LocalStorage

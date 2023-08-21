@@ -1,0 +1,6 @@
+/* Estilos que afectan a TODA la web */
+
+/* Directivas tailwind*/
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
