@@ -1,11 +1,23 @@
 import { useEffect } from "react";
 
-const Patient = ({ patient, setPatient }) => {
+const Patient = ({ patient, setPatient, deletePatient }) => {
     useEffect(() => {
         // console.log("El componente PATIENTS esta listo");
     }, []);
 
-    const { petName, petOwner, ownerEmail, registerDate, petSymptoms } =
+
+    const handleDelete = () => {
+        console.log("Eliminando", id);
+        const resp = confirm("¿Quieres eliminar este paciente?");
+
+        if (resp) {
+            deletePatient(id);
+        }
+
+        // deletePatient(id)
+    };
+
+    const { petName, petOwner, ownerEmail, registerDate, petSymptoms, id } =
         patient;
     return (
         <div className="bg-white shadow-md rounded-xl py-5 px-5 mb-5 w-11/12 m-auto">
@@ -47,6 +59,7 @@ const Patient = ({ patient, setPatient }) => {
                 <button
                     className="py-2 px-10 bg-red-600 hover:bg-red-700 duration-500 ease-in-out cursor-pointer text-white font-bold uppercase rounded-lg"
                     type="button"
+                    onClick={handleDelete}
                 >
                     Eliminar
                 </button>

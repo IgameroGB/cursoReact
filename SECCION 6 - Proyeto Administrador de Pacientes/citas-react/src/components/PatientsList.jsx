@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import Patient from "./Patient";
 
-const PatientsList = ({ patients, setPatient }) => {
+const PatientsList = ({ patients, setPatient, deletePatient}) => {
     // Reto 2
     useEffect(() => {
-        patients.length > 0 && console.log("Nuevo paciente (Reto 2)");
+        // patients.length > 0 && console.log("Nuevo paciente (Reto 2)");
     }, [patients]);
     return (
         <>
@@ -26,7 +26,7 @@ const PatientsList = ({ patients, setPatient }) => {
                         <h2 className="font-black text-3xl text-center">
                             No hay pacientes
                         </h2>
-                        <p className="text-lg mt-5 text-center mb-10">
+                        <p className="text-lg mt-5 text-center mb-10 pb-20">
                             Cuando agreges tu primer paciente {""} <br />
                             <span className="text-indigo-600 font-bold">
                                 ¡Aparecerá aqui debajo!
@@ -39,8 +39,10 @@ const PatientsList = ({ patients, setPatient }) => {
                         key={patient.id} // Cuando se iteran componentes es necesario pasar un id unico
                         patient={patient}
                         setPatient={setPatient}
+                        deletePatient={deletePatient}
                     />
                 ))}
+                <div className="pb-5"></div>
             </div>
         </>
     );
