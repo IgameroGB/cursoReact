@@ -1,0 +1,15 @@
+Se requiere Node,js(NPM ó YARN)
+
+¿Qué usar para creaar APPS en React?
+- Vite
+- Next,jsAstro
+- Remix run
+- Hydrogen
+
+Otras opciones menos usadas actualmente
+- Create React APPS
+- Gatsby
+
+Recomendaciones
+- React DEV recomienda utilizar Next.js o Remix
+    - Facilita el uso de Server Components

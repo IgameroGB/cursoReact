@@ -1,0 +1,7 @@
+¿Como instalar NODE.js?
+- Accedemos a https://nodejs.org/es
+- Descargamos verion LTS (version estable)
+- Continuamos los pasos de instalacion
+- podremos comprobar si se a instalado correctamente todo utilizando en la consola los comandos
+    - node -v
+    - npm -v
