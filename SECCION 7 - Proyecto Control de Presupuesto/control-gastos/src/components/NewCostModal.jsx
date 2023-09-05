@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Message from "./Message";
 import CloseModal from "../img/cerrar.svg";
 
@@ -6,16 +6,34 @@ const NewCostModal = ({
     setModal,
     modalAnimation,
     setModalAnimation,
-    saveCost
+    saveCost,
+    costEdit,
+    setCostEdit,
 }) => {
     const [errorMsg, setErrorMsg] = useState("");
 
     const [costName, setCostName] = useState("");
     const [costCuantity, setCostCuantity] = useState("");
     const [costCategory, setCostCategory] = useState("");
+    const [costDate, setCostDate] = useState("");
+    const [costId, setCostId] = useState("");
+
+    // console.log(costEdit);
+
+    useEffect(() => {
+        // console.log(costEdit);
+        if (Object.keys(costEdit).length > 0) {
+            setCostName(costEdit.costName);
+            setCostCuantity(costEdit.costCuantity);
+            setCostCategory(costEdit.costCategory);
+            setCostDate(costEdit.costDate);
+            setCostId(costEdit.costId);
+        }
+    }, []);
 
     const closeModal = () => {
         setModalAnimation(false);
+        setCostEdit({});
 
         setTimeout(() => {
             setModal(false);
@@ -33,7 +51,7 @@ const NewCostModal = ({
             }, 3000);
             return;
         }
-        saveCost({ costName, costCuantity, costCategory });
+        saveCost({ costName, costCuantity, costCategory, costDate, costId });
     };
     return (
         <div className="modal">
@@ -44,7 +62,9 @@ const NewCostModal = ({
                 className={`formulario ${modalAnimation ? "animar" : "cerrar"}`}
                 onSubmit={handleSubmit}
             >
-                <legend>Nuevo gasto</legend>
+                <legend>
+                    {costEdit.costName ? "Editar gasto" : "Nuevo gasto"}
+                </legend>
                 {errorMsg && <Message tipo="error">{errorMsg}</Message>}
                 <div className="campo">
                     <label htmlFor="costName">Nombre Gasto</label>
@@ -104,7 +124,12 @@ const NewCostModal = ({
                     </select>
                 </div>
 
-                <input type="submit" value="Añadir Gasto" />
+                <input
+                    type="submit"
+                    value={
+                        costEdit.costName ? "Guardar Cambios" : "Añadir gasto"
+                    }
+                />
             </form>
         </div>
     );

@@ -4,7 +4,7 @@ import Form from "./components/Form";
 import PatientsList from "./components/PatientsList";
 
 function App() {
-    // const initianPatienListState = () => {
+    // const initialPatienListState = () => {
     //     if (JSON.parse(localStorage.getItem("patientList"))) {
     //         return JSON.parse(localStorage.getItem("patientList"));
     //     } else {
@@ -12,8 +12,8 @@ function App() {
     //     }
     // };
 
-    const initianPatienListState = () => JSON.parse(localStorage.getItem("patientList")) || [];  // Este codigo y el de arriba son iguales
-    const [patients, setPatients] = useState(initianPatienListState);
+    const initialPatienListState = () => JSON.parse(localStorage.getItem("patientList")) || [];  // Este codigo y el de arriba son iguales
+    const [patients, setPatients] = useState(initialPatienListState);
     const [patient, setPatient] = useState({});
 
     useEffect(() => {
