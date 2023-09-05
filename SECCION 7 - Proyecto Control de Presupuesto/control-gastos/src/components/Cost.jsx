@@ -27,21 +27,36 @@ const icons = {
     suscripciones: IconoSuscripciones,
 };
 
-const Cost = ({ cost }) => {
+const Cost = ({ cost, setCostEdit, deleteCost }) => {
     const { costName, costCuantity, costCategory, costId, costDate } = cost;
 
-    const leadingActions = () => {
-        console.log("Editar...");
-    };
+    const leadingActions = () => (
+        <LeadingActions>
+            {/* /Lado izquiero del swiper */}
+            <SwipeAction
+                onClick={() => {
+                    setCostEdit(cost);
+                }}
+            >
+                Editar
+            </SwipeAction>
+        </LeadingActions>
+    );
 
-    const trailingActions = () => {
-        console.log("Eliminar...");
-    };
+    const trailingActions = () => (
+        <TrailingActions>
+            {/* lado derecho del swiper */}
+            <SwipeAction onClick={() => deleteCost(costId)} destructive={true}>
+                Eliminar
+            </SwipeAction>
+        </TrailingActions>
+    );
+
     return (
         <SwipeableList>
             <SwipeableListItem
-                leadingActions={leadingActions}
-                trailingActions={trailingActions}
+                leadingActions={leadingActions()}
+                trailingActions={trailingActions()}
             >
                 <div className="gasto sombra">
                     <div className="contenido-gasto">
