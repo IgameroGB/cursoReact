@@ -4,7 +4,14 @@ import "react-circular-progressbar/dist/styles.css";
 
 import { formatNumberToEUR } from "../helpers";
 
-const BudgetController = ({ costsList, setCostsList, budget, setBudget }) => {
+const BudgetController = ({
+    costsList,
+    budget,
+    setEditBudgetModal,
+    setModalAnimation,
+    genericModalResult,
+    setGenericModal,
+}) => {
     const [percentage, setPercentage] = useState(0);
     const [available, setAvailable] = useState(0);
     const [used, setUsed] = useState(0);
@@ -12,7 +19,7 @@ const BudgetController = ({ costsList, setCostsList, budget, setBudget }) => {
     const [progressbarColor, setProgressbarColor] = useState("");
     const [progressbarText, setProgressbarText] = useState("");
 
-    useEffect(() => {
+    const modifyHeaderData = () => {
         setProgressbarColor("#3b82f6");
         if (costsList.length != 0) {
             const totalUsed = costsList.reduce((total, cost) => {
@@ -46,12 +53,30 @@ const BudgetController = ({ costsList, setCostsList, budget, setBudget }) => {
         setPercentage(0);
         setProgressbarText("0% Gastado");
         setAvailable(budget);
+    };
+
+    useEffect(() => {
+        modifyHeaderData();
+    }, [budget]);
+
+    useEffect(() => {
+        modifyHeaderData();
     }, [costsList]);
 
-    const handleResetApp = () => {
-        console.log("Reset app");
-        setCostsList([])
-        setBudget()
+    const openResetAppModal = () => {
+        setGenericModal(true);
+
+        setTimeout(() => {
+            setModalAnimation(true);
+        }, 250);
+    };
+
+    const handleEditBudget = () => {
+        setEditBudgetModal(true);
+
+        setTimeout(() => {
+            setModalAnimation(true);
+        }, 250);
     };
 
     return (
@@ -75,12 +100,15 @@ const BudgetController = ({ costsList, setCostsList, budget, setBudget }) => {
                 <button
                     className="reset-app"
                     type="button"
-                    onClick={handleResetApp}
+                    onClick={openResetAppModal}
                 >
                     Resetear App
                 </button>
                 <p>
-                    <span>Presupuesto: </span> {formatNumberToEUR(budget)}
+                    <span>Presupuesto: </span>{" "}
+                    <span className="edit" onClick={handleEditBudget}>
+                        {formatNumberToEUR(budget)}
+                    </span>
                 </p>
 
                 <p>

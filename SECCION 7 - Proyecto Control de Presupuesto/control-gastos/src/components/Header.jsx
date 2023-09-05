@@ -9,6 +9,12 @@ const Header = ({
     setBudget,
     isValidBudget,
     setIsValidBudget,
+    setEditBudgetModal,
+    newBudget,
+    setNewBudget,
+    setModalAnimation,
+    genericModalResult,
+    setGenericModal,
 }) => {
     return (
         <header>
@@ -19,6 +25,13 @@ const Header = ({
                     setCostsList={setCostsList}
                     budget={budget}
                     setBudget={setBudget}
+                    setEditBudgetModal={setEditBudgetModal}
+                    newBudget={newBudget}
+                    setNewBudget={setNewBudget}
+                    setModalAnimation={setModalAnimation}
+                    genericModalResult={genericModalResult}
+                    setGenericModal={setGenericModal}
+                    setIsValidBudget={setIsValidBudget}
                 />
             ) : (
                 <NewBudget

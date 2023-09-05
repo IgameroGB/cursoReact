@@ -4,10 +4,12 @@ import Header from "./components/Header";
 import Filter from "./components/Filter";
 import CostList from "./components/CostList";
 import NewCostModal from "./components/NewCostModal";
+import EditBudgetModal from "./components/EditBudgetModal";
 
 import { generateRandomId } from "./helpers";
 
 import AddCostIco from "./img/nuevo-gasto.svg";
+import GenericModal from "./components/GenericModal";
 
 function App() {
     // const initialCostListState = () =>
@@ -25,13 +27,19 @@ function App() {
     );
     const [isValidBudget, setIsValidBudget] = useState(false);
 
-    const [modal, setModal] = useState(false);
-    const [modalAnimation, setModalAnimation] = useState(false);
-
     const [costEdit, setCostEdit] = useState({});
 
     const [filter, setFilter] = useState("");
     const [filterCosts, setFilterCosts] = useState([]);
+
+    const [modal, setModal] = useState(false);
+    const [modalAnimation, setModalAnimation] = useState(false);
+
+    const [editBudgetModal, setEditBudgetModal] = useState(false);
+    const [newBudget, setNewBudget] = useState(budget);
+
+    const [genericModal, setGenericModal] = useState(false);
+    const [genericModalResult, setGenericModalResult] = useState(false);
 
     useEffect(() => {
         if (Object.keys(costEdit).length > 0) {
@@ -67,6 +75,19 @@ function App() {
             setFilterCosts(filterCosts);
         }
     }, [filter]);
+
+    useEffect(() => {
+        // Reset APP
+        if (genericModalResult) {
+            console.log("reset");
+            setCostsList([]);
+            setBudget("");
+            setIsValidBudget(false);
+        }
+
+        // console.log(genericModalResult);
+        console.log(isValidBudget);
+    }, [genericModalResult]);
 
     const handleNewCost = () => {
         setModal(true);
@@ -128,6 +149,13 @@ function App() {
                 setBudget={setBudget}
                 isValidBudget={isValidBudget}
                 setIsValidBudget={setIsValidBudget}
+                setEditBudgetModal={setEditBudgetModal}
+                newBudget={newBudget}
+                setNewBudget={setNewBudget}
+                setModalAnimation={setModalAnimation}
+                genericModalResult={genericModalResult}
+                setGenericModal={setGenericModal}
+                genericModal={genericModal}
             />
             {isValidBudget && (
                 <>
@@ -160,6 +188,30 @@ function App() {
                     costEdit={costEdit}
                     setCostEdit={setCostEdit}
                 />
+            )}
+
+            {editBudgetModal && (
+                <EditBudgetModal
+                    setEditBudgetModal={setEditBudgetModal}
+                    modalAnimation={modalAnimation}
+                    setModalAnimation={setModalAnimation}
+                    budget={budget}
+                    setBudget={setBudget}
+                    newBudget={newBudget}
+                    setNewBudget={setNewBudget}
+                />
+            )}
+
+            {genericModal && (
+                <GenericModal
+                    setGenericModal={setGenericModal}
+                    modalAnimation={modalAnimation}
+                    setModalAnimation={setModalAnimation}
+                    event={setGenericModalResult}
+                >
+                    ¿Estas seguro que quieres resetear la App? <br /> Esta
+                    accion es permanente
+                </GenericModal>
             )}
         </div>
     );
