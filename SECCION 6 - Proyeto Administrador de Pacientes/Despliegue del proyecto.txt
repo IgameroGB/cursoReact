@@ -1,0 +1,3 @@
+iniciamos el proyecto con "npm run build" loq ue compilara la app creando un archivo "ejecutable" en una carpeta llamada "dist"
+
+Esa carpeta sera la que subiremos a nuestro entorno

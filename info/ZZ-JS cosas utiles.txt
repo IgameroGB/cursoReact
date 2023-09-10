@@ -1,0 +1,9 @@
+ACCESO OBJETOS DINAMICAMENTE
+
+	si se encesita acceder a una clave de un objeto de manera dinamica podemos utilziar [clave]
+
+	por ejemplo persona.nombre puede llamarse de la siguietne manera
+	const clave = nombre
+	persona[clave] (es lo mismo que poner persona.nombre)
+
+	en caso de clave valer "apellido" seria persona[clave] (persona.apellido)

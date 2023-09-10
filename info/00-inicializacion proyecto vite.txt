@@ -1,0 +1,2 @@
+Para inicializar el proyecto utilizaremos el comando
+- npm init vite@latest (inicia con la ultima version de vite)

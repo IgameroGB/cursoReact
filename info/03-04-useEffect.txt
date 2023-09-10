@@ -1,0 +1,19 @@
+Es un callback que se ejecuta cuando cambia el state de un componente o cuando un componente esta listo
+
+es el sustituto del antiguo "componentDidMount()" y "componentDidUpdate"
+
+
+USOS
+
+- Al llamarse cuando un ncomponete esta cargado, suele usarse para colocar codigo relativo a llamadas a api o guardado de datos"
+- Puede actualizar un componete cuando ocurra un cambio
+
+SINTAXIS
+
+	import { useEffect } from "react"
+
+	useEffect( () => {
+		console.log("el componente esta listo"=;
+	}, [dependencias]);
+
+Podemos ver un ejemplo en codigo real en "src\components\Form.jsx" 

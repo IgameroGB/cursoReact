@@ -1,0 +1,11 @@
+¿Que es?
+- JSX es una extensiondearrollada por Facebook para React
+- Permite escribir HTML en js permitiendo hacer templates con todas las funciones de js
+- Una vez compilado todo se transforma en js vanilla
+
+Reglas
+- Todas las etiquetas de apertura tienen que tener apertura de cierre
+	- etiquetas como <img> <link> <input> deberan terminar con />
+- Cada componete debe tener un return        
+- Podremos ver ejemplos de esto en el proyecto "citas-react" App-fundamentos.jsx (src\App-fundamentos.jsx)
+                                     

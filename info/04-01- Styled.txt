@@ -1,0 +1,13 @@
+En react podemos añadir propiedades CSS para cada componente
+
+VENTAJAS
+- cuando el componente deja de usarse, se eliminan sus estilos
+
+SINTAXIS 
+
+ const Elemento = styled.h1 `
+	font.size: 2rem;
+	color: green;
+`;
+
+<Elemento>Texto con estilos<Elemento/>

@@ -1,0 +1,36 @@
+Por medio de los props (properties) es la forma de pasar datos entre componentes
+Esta pensado para pasar datos de padre a hijo, no de hijo a padre
+
+Sintaxis:
+
+<Componente
+	nombreProp={ datos }
+/>
+
+ejemplo
+
+<Cliente
+	nombre = { nombre }
+	apellido = { apellido }
+	...
+/>
+
+Si se requiriese pasar un valor de hijo a padre, puede hacerse una funcion en padre que registre un valor, pasar esa funcion al hijo y desde el hijo dar ese valor
+
+ejemplo:
+
+PADRE
+
+const someValue = (val) => {
+    console.log(val);
+  };
+
+<Componente
+	someValue = { someValue }
+/>
+
+HIJO (Componente)
+
+const { someValue } = props
+
+someValue(valoQueQueremosPasar)

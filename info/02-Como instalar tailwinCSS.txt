@@ -1,0 +1,7 @@
+Por medio del comando
+- npm 1 -D tailwindcss postcss autoprefixer
+
+instalaremos tailwindcss postcss y autoprefixer
+
+tailwind funciona similar a bootstrap, utilizado una nomeclatura mas similar a CSS
+Cada clase tiene una unica propiedad

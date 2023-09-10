@@ -1,0 +1,16 @@
+Se crean hooks para reutilziar funciones del mismo modo que podrias usar un helper
+haciendolo como hook puedes tener un state y mantener la funcion de manera persistente
+
+VENTAJAS
+- Tendrá todas las funcionalidades de React
+
+NOMENCLATURA
+	useHookPropio
+
+SINTAXIS
+	utiliza la misma sintaxis que un componente. Podemos inicializarlo con rafce en VSC
+- El return incluira un return con todas las funciones en un array
+
+Ejemplo
+	criptos_react\src\hooks\useSelectCurrency.jsx
+

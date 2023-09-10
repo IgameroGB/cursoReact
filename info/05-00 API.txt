@@ -1,0 +1,10 @@
+API = Application Programming Interface
+
+Funciones y metodos quye ofrece una libreria para ser utilziada por otro programa
+
+Funcionan por peticiones estructuradas con ciertos requisitos
+
+Es la forma de obtener datos de forma segura de otro servidor y se puede hacer en CUALQUIER lenguaje, ya que es un retorno de un JSON
+
+USO
+- En React, al ser JS opodemos utilizar fetch

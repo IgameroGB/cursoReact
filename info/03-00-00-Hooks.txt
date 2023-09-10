@@ -1,0 +1,18 @@
+¿Qué son los Hooks?
+- Funciones que monitorean el estado de los componentes de React
+
+Categorias
+- useStatu
+-useEffect
+-useContext
+
+	Adicionales
+	- useReducer
+	- useCallback
+	- useMemo
+	- useRef
+	- useImperativeHandle
+	- useLayoutEffect
+	- useDebugValue
+	
+	El desarrollador puede crear sus propios Hooks

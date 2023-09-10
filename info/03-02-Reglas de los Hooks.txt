@@ -1,0 +1,3 @@
+Se colocan en la parte superior de un componente
+
+No deben colocarse en condicionales ni despues de un return

@@ -1,0 +1,22 @@
+El estado es una variable con informacion referente a como se encuentra el componente
+Por ejemplo un formulario puede tener un state para saber si se ha enviado...
+
+SIEMPRE se declara al inicio del componente, antes del return
+
+Uso
+
+import { useState } from "react"
+
+const [producto, setProducto] = useState({})
+- producto es la variable que contiene el valor del estado
+- setProducto modifica es estado de "producto". Es una funcion.
+- useState esta inicializado como un objeto vacio
+
+Otro ejemplo
+
+const [modal, setModal] = useState(false)
+
+-------------
+
+React funciona de manera que cada vez que cambia el state se renderiza de nuevo la página.
+En los ejemplos de arriba el estado se modifica con "useState(...)"
