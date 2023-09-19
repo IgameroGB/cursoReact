@@ -1,0 +1,12 @@
+REST = Representational State Transfer
+
+Puede diseñarse en cualquier lenguaje
+
+Debe responder a GET, POST, PUT, PATCH, DELETE
+	-	Get - Obtener registros de una BBDD o API
+	-	Post - Enviar datos al Server / Crear registro
+	-	Put / Patch - Actualizar datos
+	-	Delete - Eliminar registro
+
+ENDPOINTS
+- URL a las que acceder para hacer operaciones CRUD

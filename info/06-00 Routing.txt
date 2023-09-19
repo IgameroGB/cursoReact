@@ -1,0 +1,7 @@
+¿Qué es el routing?
+El lo que permite navegar entre varias pantallas y paginas distintas
+
+-React Router, V, Remix Run, React location, React Query
+
+Ademas, muchos frameworks tienes sus propios routers
+
